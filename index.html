@@ -12,6 +12,8 @@
       <h1>
         WASM Math Test
       </h1>
+      <input type="number" id="inputNumber" />
+      <BUTTON onclick="mather()">Calculate</BUTTON>
     </center>
     <script>
       WebAssembly.instantiateStreaming(fetch('math_test.wasm'))
