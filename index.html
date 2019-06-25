@@ -12,8 +12,8 @@
       WebAssembly.instantiateStreaming(fetch('math_test.wasm'))
       .then(obj => {
         console.log(obj);
-        // console.log(obj.instance.exports.squarer(2));
-        // console.log(obj.instance.exports.cuber(2));
+        console.log(obj.instance.exports.squarer(2));
+        console.log(obj.instance.exports.cuber(2));
       });
     </script>
   </body>
