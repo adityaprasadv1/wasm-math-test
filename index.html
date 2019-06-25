@@ -14,6 +14,12 @@
       </h1>
       <input type="number" id="inputNumber" />
       <BUTTON onclick="mather()">Calculate</BUTTON>
+      <h3>
+        Square: <span id="squarer"></span>
+      </h3>
+      <h3>
+        Cube: <span id="cuber"></span>
+      </h3>
     </center>
     <script>
       WebAssembly.instantiateStreaming(fetch('math_test.wasm'))
