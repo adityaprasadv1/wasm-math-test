@@ -8,6 +8,11 @@
   </head>
 
   <body>
+    <center>
+      <h1>
+        WASM Math Test
+      </h1>
+    </center>
     <script>
       WebAssembly.instantiateStreaming(fetch('math_test.wasm'))
       .then(obj => {
