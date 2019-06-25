@@ -22,12 +22,18 @@
       </h3>
     </center>
     <script>
-      WebAssembly.instantiateStreaming(fetch('math_test.wasm'))
-      .then(obj => {
-        console.log(obj);
-        console.log(obj.instance.exports.squarer(2));
-        console.log(obj.instance.exports.cuber(2));
-      });
+      function mather() {
+        let inputNumber = document.getElementById("inputNumber").value;
+        console.warn(inputNumber);
+        WebAssembly.instantiateStreaming(fetch('math_test.wasm'))
+        .then(obj => {
+          document.getElementById("squarer").innerHTML = obj.instance.exports.squarer(inputNumber);
+          document.getElementById("cuber").innerHTML = obj.instance.exports.cuber(inputNumber);
+          console.log(obj);
+          console.log("Squarer: ", obj.instance.exports.squarer(inputNumber));
+          console.log("Cuber: ", obj.instance.exports.cuber(inputNumber));
+        });
+      }
     </script>
   </body>
 
