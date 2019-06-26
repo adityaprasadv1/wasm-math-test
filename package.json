@@ -1,0 +1,26 @@
+{
+  "name": "wasm-math-test",
+  "version": "1.0.0",
+  "description": "Math functions using WASM",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adityaprasadv1/wasm-math-test.git"
+  },
+  "keywords": [
+    "WASM"
+  ],
+  "author": "Aditya V",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adityaprasadv1/wasm-math-test/issues"
+  },
+  "homepage": "https://github.com/adityaprasadv1/wasm-math-test#readme",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  }
+}
