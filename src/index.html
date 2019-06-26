@@ -14,12 +14,14 @@
       </h1>
       <input type="number" id="inputNumber" />
       <BUTTON onclick="mather()">Calculate</BUTTON>
-      <h3>
-        Square: <span id="squarer"></span>
-      </h3>
-      <h3>
-        Cube: <span id="cuber"></span>
-      </h3>
+      <div id="results" style="display: none">
+        <h3>
+          Square: <span id="squarer"></span>
+        </h3>
+        <h3>
+          Cube: <span id="cuber"></span>
+        </h3>  
+      </div>
     </center>
     <script>
       function mather() {
@@ -27,8 +29,14 @@
         console.warn(inputNumber);
         WebAssembly.instantiateStreaming(fetch('math_test.wasm'))
         .then(obj => {
-          document.getElementById("squarer").innerHTML = obj.instance.exports.squarer(inputNumber);
-          document.getElementById("cuber").innerHTML = obj.instance.exports.cuber(inputNumber);
+          let squarer = document.getElementById("squarer");
+          let cuber = document.getElementById("cuber");
+          let results = document.getElementById("results");
+          
+          squarer.innerHTML = obj.instance.exports.squarer(inputNumber);
+          cuber.innerHTML = obj.instance.exports.cuber(inputNumber);
+          results.style.display = "block";
+
           console.log(obj);
           console.log("Squarer: ", obj.instance.exports.squarer(inputNumber));
           console.log("Cuber: ", obj.instance.exports.cuber(inputNumber));
